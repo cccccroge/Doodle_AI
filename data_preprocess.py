@@ -39,6 +39,8 @@ def csv2pngs(csv_path, csv_name, image_path, width, height):
     df = df.iloc[1:]    # drop first row which is not data
     df = df.drop(df.columns[0], axis=1) # drop first column which is redundant
 
+    image_path += (csv_name + '/')
+
     try:
         os.mkdir(image_path)
     except OSError:
@@ -56,4 +58,6 @@ def csv2pngs(csv_path, csv_name, image_path, width, height):
         img.save(img_path)
 
 
-csv2pngs('dataset/train_doodle_csv/', 'banana', 'dataset/train_png/', 150, 150)
+#csv2pngs('dataset/train_doodle_csv/', 'banana', 'dataset/train_png/', 150, 150)
+
+csv2pngs('dataset/train_doodle_csv/', 'test_predict', 'dataset/train_png/', 150, 150)
